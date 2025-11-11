@@ -1,0 +1,15 @@
+@keyframes neon-pulse {
+  0%,
+  100% {
+    text-shadow: 0 0 2px #e0ae6c, 0 0 3px #d7a057, 0 0 4px #c58a3d,
+      0 0 5px #cf831f;
+  }
+  50% {
+    text-shadow: 0 0 1px #be71b2, 0 0 2px #b650a7, 0 0 3px #8f2b80,
+      0 0 4px #721564;
+  }
+}
+
+.neon-animated {
+  animation: neon-pulse 3s ease-in-out infinite alternate;
+}
