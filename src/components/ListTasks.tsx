@@ -2,10 +2,20 @@ import { MdEdit } from "react-icons/md";
 import { FaCheck } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import { Button } from "./Button";
+import { useState } from "react";
+import { VscError } from "react-icons/vsc";
 
-export const ListTasks = () => {
+interface Props {
+  task: string,
+  onDelete: (id: string) => void,
+  id: string,
+}
+
+export const ListTasks = ({task, onDelete, id}: Props) => {
+  const [status, setStatus] = useState(false);
+
   const handleComplet = () => {
-    console.log("Completed");
+    setStatus(!status);
   };
 
   const handleEdit = () => {
@@ -13,27 +23,32 @@ export const ListTasks = () => {
   };
 
   const handleDelete = () => {
-    console.log("Deleted");
+    onDelete(id)
   };
-
   return (
-    <div className="border p-2 rounded-2xl flex justify-between">
+    <div
+      className={`w-full border p-2 rounded-2xl flex justify-between ${
+        status ? "bg-emerald-500" : ""
+      } `}
+    >
       <div className="flex items-center w-[80%] ">
-        <span>
-          Task Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae,
-          eum vel. Nam dolores laboriosam{" "}
-        </span>
+        <span>{task}</span>
       </div>
-      <div className="flex gap-4 items-center">
+      <div className="flex items-center justify-center gap-4">
         <Button handleBtn={handleComplet}>
-          <FaCheck />
+          {!status ? <FaCheck /> : <VscError />}
         </Button>
+
         <Button handleBtn={handleEdit}>
           <MdEdit />
         </Button>
-        <Button handleBtn={handleDelete}>
-          <MdDelete />
-        </Button>
+        {!status ? (
+          <Button handleBtn={handleDelete}>
+            <MdDelete />
+          </Button>
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );
