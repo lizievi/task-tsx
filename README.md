@@ -1,6 +1,7 @@
 # Lista de Tareas (tasks-tsx)
 
 Este proyecto es una aplicación simple de gestión de tareas, construida con **React**, **TypeScript**, y **Tailwind CSS**. Permite a los usuarios agregar, marcar como completadas y eliminar tareas de una lista.
+Visita mi App de tareas en: https://task-tsx-mu.vercel.app/
 
 ## Características
 
@@ -51,21 +52,21 @@ npm run preview: Previsualiza el proyecto construido.
 
 ## Estructura del Proyecto
 
-* src/components: Componentes reutilizables, como el Header, Container, Button, etc.
+ src/components: Componentes reutilizables, como el Header, Container, Button, etc.
 
-* src/pages: Página principal de las tareas (TasksWhitoutStorage), que maneja la lógica de agregar, completar y eliminar tareas.
+ src/pages: Página principal de las tareas (TasksWhitoutStorage), que maneja la lógica de agregar, completar y eliminar tareas.
 
-* src/App.tsx: Componente principal que incluye todos los componentes necesarios para la aplicación.
+ src/App.tsx: Componente principal que incluye todos los componentes necesarios para la aplicación.
 
 ## Dependencias
 
-* React: Biblioteca para la construcción de interfaces de usuario.
+ React: Biblioteca para la construcción de interfaces de usuario.
 
-* Tailwind CSS: Framework de CSS para un diseño rápido y responsive.
+ Tailwind CSS: Framework de CSS para un diseño rápido y responsive.
 
-* UUID: Para generar identificadores únicos para las tareas.
+ UUID: Para generar identificadores únicos para las tareas.
 
-* ESLint: Herramienta de linting para mantener un código limpio y consistente.
+ ESLint: Herramienta de linting para mantener un código limpio y consistente.
 
 ## Contribución
 
