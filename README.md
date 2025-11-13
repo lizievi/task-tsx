@@ -1,73 +1,80 @@
-# React + TypeScript + Vite
+# Lista de Tareas (tasks-tsx)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es una aplicación simple de gestión de tareas, construida con **React**, **TypeScript**, y **Tailwind CSS**. Permite a los usuarios agregar, marcar como completadas y eliminar tareas de una lista.
 
-Currently, two official plugins are available:
+## Características
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Agregar nuevas tareas.
+- Marcar tareas como completadas.
+- Eliminar tareas.
+- Interfaz estilizada con **Tailwind CSS**.
+- No utiliza almacenamiento persistente (solo en memoria durante la sesión).
 
-## React Compiler
+## Instalación
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. Clona este repositorio:
+  ```bash
+  git clone https://github.com/tuusuario/tasks-tsx.git
+  ```
+2. Accede a la carpeta del proyecto:
+  ```bash
+  cd tasks-tsx
+  ```
 
-## Expanding the ESLint configuration
+3. Instala las dependencias:
+  ```bash
+  npm install
+  ```
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Scripts
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+npm run dev: Inicia el servidor de desarrollo (con Vite).
+  ```bash
+  npm run dev
+  ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+npm run build: Compila el proyecto con TypeScript y Vite.
+  ```bash
+  npm run build
+  ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+npm run lint: Ejecuta ESLint para revisar el código.
+  ```bash
+  npm run lint
+  ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+npm run preview: Previsualiza el proyecto construido.
+  ```bash
+  npm run preview
+  ```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Estructura del Proyecto
+
+* src/components: Componentes reutilizables, como el Header, Container, Button, etc.
+
+* src/pages: Página principal de las tareas (TasksWhitoutStorage), que maneja la lógica de agregar, completar y eliminar tareas.
+
+* src/App.tsx: Componente principal que incluye todos los componentes necesarios para la aplicación.
+
+## Dependencias
+
+* React: Biblioteca para la construcción de interfaces de usuario.
+
+* Tailwind CSS: Framework de CSS para un diseño rápido y responsive.
+
+* UUID: Para generar identificadores únicos para las tareas.
+
+* ESLint: Herramienta de linting para mantener un código limpio y consistente.
+
+## Contribución
+
+Realiza un fork del repositorio.
+
+Crea una rama nueva para tu funcionalidad (git checkout -b feature/nueva-tarea).
+
+Realiza tus cambios y haz commit (git commit -m 'Agregada nueva tarea').
+
+Haz push a tu rama (git push origin feature/nueva-tarea).
+
+Crea un Pull Request.
